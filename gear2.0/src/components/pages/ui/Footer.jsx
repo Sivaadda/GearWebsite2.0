@@ -1,70 +1,111 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      duration: 0.6,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 function Footer() {
   return (
-    <footer className="relative bg-black text-white pt-16 pb-10 px-6 overflow-hidden">
-      {/* Wave Shape Background */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
-        <svg
-          className="relative block w-[calc(200%+1.3px)] h-[100px]"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
-        >
-          <path
-            d="M321.39,56.39C228.53,83.95,114.78,109.78,0,101.41V0H1200V101.41c-114.78,8.37-228.53-17.46-321.39-45.02C758.53,28.87,631.13-11.25,500,10.05,368.87,31.35,514.25,27.99,321.39,56.39Z"
-            fill="#0f0f0f"
-          />
-        </svg>
-      </div>
-
+    <footer
+      className="relative bg-gradient-to-br from-green-900 via-black to-gray-900 text-white py-16 px-6"
+    >
       {/* Footer Content */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 z-10 relative">
+      <motion.div
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 z-10 relative"
+         initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+        variants={containerVariants}
+      >
         {/* Logo Section */}
-        <div>
-          <img src='/images/logo.png' alt="Gear Logo" className="w-32" />
-          <p className="text-sm text-gray-400">
+        <motion.div variants={itemVariants}>
+          <motion.img
+            src="/images/logo.png"
+            alt="Gear Logo"
+            className="w-32 hover:scale-105 transition-transform"
+            whileHover={{ scale: 1.05 }}
+          />
+          <p className="text-sm text-gray-400 mt-2">
             Committed to delivering exceptional services and cutting-edge solutions.
           </p>
-        </div>
+        </motion.div>
 
         {/* Navigation Links */}
-        <div>
+        <motion.div variants={itemVariants}>
           <h3 className="font-semibold text-green-400 mb-3">Navigation</h3>
           <ul className="space-y-2">
-            <li><Link to="/" className="hover:text-green-500 transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-green-500 transition">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-green-500 transition">Services</Link></li>
-            <li><Link to="/products" className="hover:text-green-500 transition">Products</Link></li>
+            {["Home", "About Us", "Services", "Products"].map((text, i) => (
+              <motion.li
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  to={`/${text.toLowerCase().replace(" ", "")}`}
+                  className="hover:text-green-500 transition"
+                >
+                  {text}
+                </Link>
+              </motion.li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Quick Links */}
-        <div>
+        <motion.div variants={itemVariants}>
           <h3 className="font-semibold text-green-400 mb-3">Quick Links</h3>
           <ul className="space-y-2">
-            <li><Link to="/contact" className="hover:text-green-500 transition">Contact Us</Link></li>
-            <li><Link to="/career" className="hover:text-green-500 transition">Careers</Link></li>
-            {/* <li><Link to="/faq" className="hover:text-green-500 transition">FAQ</Link></li>
-            <li><Link to="/blog" className="hover:text-green-500 transition">Blog</Link></li> */}
+            {[
+              { label: "Contact Us", to: "/contact" },
+              { label: "Careers", to: "/career" },
+              // { label: "FAQ", to: "/faq" },
+              // { label: "Blog", to: "/blog" },
+            ].map(({ label, to }, i) => (
+              <motion.li
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link to={to} className="hover:text-green-500 transition">
+                  {label}
+                </Link>
+              </motion.li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Contact Info */}
-        <div>
+        <motion.div variants={itemVariants}>
           <h3 className="font-semibold text-green-400 mb-3">Contact</h3>
           {/* <p className="text-sm text-gray-400">London Eye, London, UK</p> */}
           <p className="text-sm text-gray-400">+91 9502172867</p>
           <p className="text-sm text-gray-400">support@servicesingear.com</p>
-          
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Footer Bottom */}
-      <p className="text-center mt-10 text-xs text-green-300 border-t border-green-700 pt-4">
+      <motion.p
+        className="text-center mt-10 text-xs text-green-300 border-t border-green-700 pt-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         © 2025 Gear · All Rights Reserved
-      </p>
+      </motion.p>
     </footer>
   );
 }

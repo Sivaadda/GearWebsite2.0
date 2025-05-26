@@ -1,7 +1,35 @@
-
 import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
 import React, { useEffect } from "react";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeScale = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+};
 
 const services = [
   {
@@ -60,156 +88,211 @@ const caseStudies = [
 ];
 
 const testimonials = [
- {
-        name: "JS Infra Developers",
-        feedback:
-          "GEAR Gate's automated system makes vehicle entry fast and hassle-free. It's accurate, secure, and works seamlessly. Highly recommended!",
-      },
-      {
-        name: "Green Home Enterprises",
-        feedback:
-          "AI-PR social media manager has made content posting effortless! It generates engaging images and text daily, keeping our accounts active and boosting engagement. A game-changer!",
-      },
-      {
-        name: "Crux-AI",
-        feedback:
-          "The GEAR image generator creates stunning, tailored product visuals in seconds, making marketing faster, easier, and more effective.",
-      },
+  {
+    name: "JS Infra Developers",
+    feedback:
+      "GEAR Gate's automated system makes vehicle entry fast and hassle-free. It's accurate, secure, and works seamlessly. Highly recommended!",
+  },
+  {
+    name: "Green Home Enterprises",
+    feedback:
+      "AI-PR social media manager has made content posting effortless! It generates engaging images and text daily, keeping our accounts active and boosting engagement. A game-changer!",
+  },
+  {
+    name: "Crux-AI",
+    feedback:
+      "The GEAR image generator creates stunning, tailored product visuals in seconds, making marketing faster, easier, and more effective.",
+  },
 ];
 
 const Service = () => {
-   useEffect(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, []);
-  return(
-  <div className="bg-black text-green-100">
-    <HeroSection
-      backgroundImage="/images/service.png"
-      headlines={[
-        "AI & Robotics Solutions That Transform Your Business",
-        "Smarter Automation, Real Results",
-        "Powering the Future with Intelligent Systems",
-      ]}
-      subtext="We specialize in cutting-edge AI and robotics services to enhance operational efficiency, precision, and scalability for modern businesses."
-    />
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-    {/* Services Section */}
-  <motion.section
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: false }}
-   className="px-4 sm:px-10 lg:px-20 py-16">
-       <h2 className="text-4xl font-bold mb-12 text-green-400 text-center">
-        Our Services
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-green-500 transition duration-300"
-          >
-            <div className="text-4xl mb-4">{service.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-            <p className="text-gray-300">{service.description}</p>
-          </div>
-        ))}
-      </div>
-   </motion.section>
-
-    {/* Industries Section */}
-    <section className="px-4 sm:px-10 lg:px-20 py-16">
-      <h2 className="text-4xl font-bold text-center mb-12 text-green-400">Industries We Serve</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {industries.map((industry, i) => (
-          <div key={i} className="bg-gray-700 border border-green-500 rounded-xl p-6 text-center text-lg font-medium hover:scale-105 transition">
-            {industry}
-          </div>
-        ))}
-      </div>
-    </section>
-
-    {/* Technologies Section */}
-    <section className="px-4 sm:px-10 lg:px-20 py-16">
-      <h2 className="text-4xl font-bold text-center mb-12 text-green-400">Technologies We Use</h2>
-      <div className="flex flex-wrap justify-center gap-4 text-center">
-        {technologies.map((tech, i) => (
-          <span key={i} className="bg-gray-700 px-6 py-3 rounded-full border border-green-400 text-sm font-medium">
-            {tech}
-          </span>
-        ))}
-      </div>
-    </section>
-
-    {/* Case Studies Section */}
-    <section className="px-4 sm:px-10 lg:px-20 py-16 ">
-      <h2 className="text-4xl font-bold text-center mb-12 text-green-400">Case Studies</h2>
-      <div className="grid sm:grid-cols-2 gap-8">
-        {caseStudies.map((cs, i) => (
-          <div key={i} className="bg-gray-700 p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold mb-2">{cs.title}</h3>
-            <p className="text-gray-300">{cs.result}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    {/* Testimonials Section */}
-    <section className="px-4 sm:px-10 lg:px-20 py-16 ">
-      <h2 className="text-4xl font-bold text-center mb-12 text-green-400">What Our Clients Say</h2>
-      <div className="grid sm:grid-cols-2 gap-8">
-        {testimonials.map((t, i) => (
-          <div key={i} className="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
-            <p className="italic text-green-200 mb-4">“{t.feedback}”</p>
-            <p className="font-semibold">{t.name}</p>
-            {/* <p className="text-sm text-gray-400">{t.role}</p> */}
-          </div>
-        ))}
-      </div>
-    </section>
-
-    {/* Call to Action Section */}
-  <motion.section
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: true }}
-  className="px-4 sm:px-10 lg:px-16 py-16 text-green-100 "
->
-
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center ">
-    
-    {/* CTA Content */}
-    <div className="space-y-6">
-      <h2 className="text-4xl font-extrabold leading-tight">
-        Ready to Automate Your Future?
-      </h2>
-      <p className="text-lg text-gray-400">
-        Discover how our AI and robotics solutions can streamline your operations,
-        reduce costs, and drive innovation in your organization.
-      </p>
-      <a 
-        href="/contact" 
-        className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-3 rounded-xl transition duration-300"
-      >
-        Get in Touch
-      </a>
-    </div>
-
-    {/* Futuristic Visual */}
-    <div className="flex justify-center  md:justify-end ">
-      <img
-        src="/images/robo.png"
-        alt="AI robot"
-        className="h-64 object-contain"
+  return (
+    <div className="bg-black text-green-100">
+      <HeroSection
+        backgroundImage="/images/service.png"
+        headlines={[
+          "AI & Robotics Solutions That Transform Your Business",
+          "Smarter Automation, Real Results",
+          "Powering the Future with Intelligent Systems",
+        ]}
+        subtext="We specialize in cutting-edge AI and robotics services to enhance operational efficiency, precision, and scalability for modern businesses."
       />
+
+      {/* Services Section */}
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-20 py-16"
+      >
+        <motion.h2
+          variants={fadeInUp}
+          className="text-4xl font-bold mb-12 text-green-400 text-center"
+        >
+          Our Services
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={fadeScale}
+              className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-green-500 transition duration-300"
+            >
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-gray-300">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Industries Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-20 py-16"
+      >
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          Industries We Serve
+        </h2>
+        <motion.div
+          variants={staggerContainer}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          {industries.map((industry, i) => (
+            <motion.div
+              key={i}
+              variants={fadeScale}
+              className="bg-gray-700 border border-green-500 rounded-xl p-6 text-center text-lg font-medium hover:scale-105 transition"
+            >
+              {industry}
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
+
+      {/* Technologies Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        variants={slideInLeft}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-20 py-16"
+      >
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          Technologies We Use
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4 text-center">
+          {technologies.map((tech, i) => (
+            <motion.span
+              key={i}
+              variants={fadeScale}
+              className="bg-gray-700 px-6 py-3 rounded-full border border-green-400 text-sm font-medium"
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Case Studies Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        variants={slideInRight}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-20 py-16"
+      >
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          Case Studies
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-8">
+          {caseStudies.map((cs, i) => (
+            <motion.div
+              key={i}
+              variants={fadeInUp}
+              className="bg-gray-700 p-6 rounded-xl shadow-md"
+            >
+              <h3 className="text-xl font-semibold mb-2">{cs.title}</h3>
+              <p className="text-gray-300">{cs.result}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Testimonials Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        transition={{ duration: 1.3 }}
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-20 py-16"
+      >
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          What Our Clients Say
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-8">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              variants={fadeScale}
+              className="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md"
+            >
+              <p className="italic text-green-200 mb-4">“{t.feedback}”</p>
+              <p className="font-semibold">{t.name}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* CTA Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        transition={{ duration: 1.0 }}
+        viewport={{ once: false }}
+        className="px-4 sm:px-10 lg:px-16 py-16 text-green-100"
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <motion.div variants={slideInLeft} className="space-y-6">
+            <h2 className="text-4xl font-extrabold leading-tight">
+              Ready to Automate Your Future?
+            </h2>
+            <p className="text-lg text-gray-400">
+              Discover how our AI and robotics solutions can streamline your operations,
+              reduce costs, and drive innovation in your organization.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-3 rounded-xl transition duration-300"
+            >
+              Get in Touch
+            </a>
+          </motion.div>
+
+          <motion.div variants={slideInRight} className="flex justify-center md:justify-end">
+            <img
+              src="/images/robo.png"
+              alt="AI robot"
+              className="h-64 object-contain"
+            />
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
-    </div>
-
-</motion.section>
-
-
-  </div>
-);}
+  );
+};
 
 export default Service;

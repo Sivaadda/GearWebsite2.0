@@ -4,6 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { ContinuousImageScroll } from "./ContinuousImageScroll.JSX";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import HeroSection from "./HeroSection";
 
 
 const Career = () => {
@@ -123,42 +124,20 @@ const fadeUp = {
     <div className="bg-black text-green-100 font-sans">
     
       {/* Hero Section */}
-      <section
-  className="text-center h-[300px] md:h-[400px] py-24 md:py-32 bg-green-700 text-white relative overflow-hidden mb-8 bg-cover bg-center"
-  // Update with your image path
->
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: 'url(/images/job-hero-image.png)',  // Your background image
-      backgroundSize: 'cover',  // Ensures the image covers the section
-      backgroundPosition: 'center', // Centers the image
-      height: '100%',  // Make sure it covers the full height of the section
-    }}
-  ></div>
- 
 
-  <div className="relative z-10">
-    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-      <Typewriter
-        words={['Join Our Team', 'Build the Future With Us', 'Be a Part of Something Big']}
-        loop={true}
-        cursor
-        cursorStyle="|"
-        typeSpeed={70}
-        deleteSpeed={50}
-        delaySpeed={1500}
-      />
-    </h1>
-    <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-gray-300">
-      We're always looking for passionate, driven individuals to grow with us. Explore open roles and build your future here.
-    </p>
-  </div>
-</section>
+          <HeroSection
+            backgroundImage="/images/job-hero-image.png"
+            headlines={[
+              'Join Our Team',
+              'Build the Future With Us',
+              'Be a Part of Something Big'
+            ]}
+            subtext="We're always looking for passionate, driven individuals to grow with us. Explore open roles and build your future here."
+          />
 
       {/* Why Us */}
-     <section className="py-16 px-6 max-w-6xl mx-auto text-center">
-  <h2 className="text-3xl font-bold mb-6">Why Work With Us?</h2>
+     <section className="py-8 px-6 max-w-6xl mx-auto text-center">
+  <h2 className="text-3xl font-bold mb-12">Why Work With Us?</h2>
 
   <motion.div
     className="grid md:grid-cols-3 gap-8 text-left"
@@ -184,7 +163,7 @@ const fadeUp = {
       <section className="py-16 px-6 max-w-7xl mx-auto md:flex gap-8">
       {/* Filter Sidebar */}
      <aside className="w-full md:w-1/3 mb-10 md:mb-0">
-  <h2 className="text-2xl font-bold mb-4">Filter Jobs</h2>
+  <h2 className="text-2xl font-bold mb-6">Filter Jobs</h2>
   <input
     type="text"
     placeholder="Search by title..."
@@ -196,7 +175,7 @@ const fadeUp = {
     className="w-full p-2 mb-4 bg-gray-800 text-white rounded-md"
   />
 
-  <h4 className="text-lg font-semibold mt-4 mb-2">Job Type</h4>
+  <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">Job Type</h4>
   {["fullTime", "partTime", "contract", "intern"].map((type) => (
     <label key={type} className="block">
       <input
@@ -209,7 +188,7 @@ const fadeUp = {
     </label>
   ))}
 
-  <h4 className="text-lg font-semibold mt-4 mb-2">Department</h4>
+  <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">Department</h4>
   {departments.map((dept) => (
     <label key={dept} className="block">
       <input
@@ -222,7 +201,7 @@ const fadeUp = {
     </label>
   ))}
 
-  <h4 className="text-lg font-semibold mt-4 mb-2">Work Model</h4>
+  <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">Work Model</h4>
   {workModels.map((model) => (
     <label key={model} className="block">
       <input
@@ -241,7 +220,7 @@ const fadeUp = {
       {/* Job Listings */}
       <div className="w-full md:w-2/3">
 
-  <h2 className="text-3xl font-bold mb-6 text-center">Current Openings</h2>
+  <h2 className="text-3xl font-bold mb-12 text-center">Current Openings</h2>
   <div className="space-y-6">
     {currentJobs.length > 0 ? (
       currentJobs.map((job, index) => (
@@ -336,7 +315,7 @@ const fadeUp = {
 
       {/* Contact / Application Prompt */}
    <motion.section
-  className="text-center py-20 bg-green-900/20"
+  className="text-center py-20"
   variants={fadeUp}
   initial="hidden"
   whileInView="show"
@@ -376,7 +355,7 @@ const fadeUp = {
           </>
         ) : (
           <a
-             href={`mailto:support@servicesingear.com?subject=Job Application – [Your Name]&body=Dear Hiring Team,%0D%0A%0D%0AI hope this message finds you well.%0D%0A%0D%0AI am writing to express my interest in potential opportunities at [Company Name].%0D%0A%0D%0AI bring experience in [mention your key area: e.g., frontend development, UI/UX design, project management], along with strong skills in technologies such as [e.g., React, Node.js, Figma, Agile methodologies].%0D%0A%0D%0AI've attached my resume for your review. I am excited about the opportunity to contribute to innovative projects and collaborate with a team that values creativity, impact, and growth.%0D%0A%0D%0AThank you for considering my application. I would welcome the chance to discuss how my background could benefit your team.%0D%0A%0D%0ABest regards,%0D%0A[Your Full Name]%0D%0A[LinkedIn or Portfolio URL]%0D%0A[Phone Number]`}
+             href={`mailto:hr@servicesingear.com?subject=Job Application – [Your Name]&body=Dear Hiring Team,%0D%0A%0D%0AI hope this message finds you well.%0D%0A%0D%0AI am writing to express my interest in potential opportunities at [Company Name].%0D%0A%0D%0AI bring experience in [mention your key area: e.g., frontend development, UI/UX design, project management], along with strong skills in technologies such as [e.g., React, Node.js, Figma, Agile methodologies].%0D%0A%0D%0AI've attached my resume for your review. I am excited about the opportunity to contribute to innovative projects and collaborate with a team that values creativity, impact, and growth.%0D%0A%0D%0AThank you for considering my application. I would welcome the chance to discuss how my background could benefit your team.%0D%0A%0D%0ABest regards,%0D%0A[Your Full Name]%0D%0A[LinkedIn or Portfolio URL]%0D%0A[Phone Number]`}
             className="w-full h-full block"
             onClick={(e) => e.stopPropagation()} // Prevent button click interference
           >

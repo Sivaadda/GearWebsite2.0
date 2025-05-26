@@ -50,7 +50,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-extrabold text-[#90C67C] tracking-wide">
-          <img src='/images/logo.png' alt="Gear Logo" className="w-32" />
+          <img src='/images/logo.png' alt="Gear Logo" className="w-20" />
         </div>
 
         {/* Desktop Navigation */}
