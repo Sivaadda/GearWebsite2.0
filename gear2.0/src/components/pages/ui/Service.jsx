@@ -10,24 +10,22 @@ const fadeInUp = {
 const staggerContainer = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
 const fadeScale = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
 };
 
 const slideInLeft = {
-  hidden: { opacity: 0, x: -100 },
+  hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0 },
 };
 
 const slideInRight = {
-  hidden: { opacity: 0, x: 100 },
+  hidden: { opacity: 0, x: 40 },
   visible: { opacity: 1, x: 0 },
 };
 
@@ -111,7 +109,7 @@ const Service = () => {
   }, []);
 
   return (
-    <div className="bg-black text-green-100">
+    <div className="bg-black text-green-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/service.png"
         headlines={[
@@ -122,13 +120,13 @@ const Service = () => {
         subtext="We specialize in cutting-edge AI and robotics services to enhance operational efficiency, precision, and scalability for modern businesses."
       />
 
-      {/* Services Section */}
+      {/* Services */}
       <motion.section
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-20 py-16"
+        className="px-4 sm:px-10 lg:px-20 pt-16 pb-12"
       >
         <motion.h2
           variants={fadeInUp}
@@ -151,14 +149,14 @@ const Service = () => {
         </div>
       </motion.section>
 
-      {/* Industries Section */}
+      {/* Industries */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         transition={{ duration: 0.6 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-20 py-16"
+        className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
           Industries We Serve
@@ -179,14 +177,14 @@ const Service = () => {
         </motion.div>
       </motion.section>
 
-      {/* Technologies Section */}
+      {/* Technologies */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         variants={slideInLeft}
         transition={{ duration: 0.7 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-20 py-16"
+        className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
           Technologies We Use
@@ -204,14 +202,14 @@ const Service = () => {
         </div>
       </motion.section>
 
-      {/* Case Studies Section */}
+      {/* Case Studies */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         variants={slideInRight}
         transition={{ duration: 0.7 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-20 py-16"
+        className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
           Case Studies
@@ -230,14 +228,14 @@ const Service = () => {
         </div>
       </motion.section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         transition={{ duration: 1.3 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-20 py-16"
+        className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
           What Our Clients Say
@@ -256,14 +254,14 @@ const Service = () => {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         transition={{ duration: 1.0 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-16 py-16 text-green-100"
+        className="px-4 sm:px-10 lg:px-16 pt-0 pb-20 text-green-100"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div variants={slideInLeft} className="space-y-6">

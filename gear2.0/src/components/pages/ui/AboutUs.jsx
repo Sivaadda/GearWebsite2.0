@@ -15,12 +15,12 @@ const staggerContainer = {
 };
 
 const slideInLeft = {
-  hidden: { opacity: 0, x: -60 },
+  hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0 },
 };
 
 const slideInRight = {
-  hidden: { opacity: 0, x: 60 },
+  hidden: { opacity: 0, x: 40 },
   visible: { opacity: 1, x: 0 },
 };
 
@@ -35,7 +35,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="bg-black text-green-100">
+    <div className="bg-black text-green-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/aboutus.png"
         headlines={[
@@ -55,7 +55,7 @@ const AboutUs = () => {
         variants={fadeInUp}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center ">
           <h2 className="text-4xl text-green-400 font-bold mb-6">Who We Are</h2>
           <p className="text-lg mb-4 text-justify">
             We're a young and ambitious team passionate about building thoughtful
@@ -101,7 +101,7 @@ const AboutUs = () => {
 
       {/* What Makes Us Different */}
       <motion.section
-        className="bg-black text-green-100 py-24 px-6"
+        className="bg-black text-green-100 py-24 px-6 "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}

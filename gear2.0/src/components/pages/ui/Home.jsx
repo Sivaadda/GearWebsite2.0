@@ -106,7 +106,7 @@ const Home = () => {
   // if (loading) return <LoadingScreen />;
 
   return (
-    <div className="bg-black text-green-400 min-h-screen font-sans">
+    <div className="bg-black text-green-400 min-h-screen font-sans overflow-x-hidden">
       <Image3D />
       {/* Hero Section */}
       {/* <section className="relative py-24 px-6 bg-gradient-to-r from-green-950 via-black to-gray-900 text-white text-center overflow-hidden">
