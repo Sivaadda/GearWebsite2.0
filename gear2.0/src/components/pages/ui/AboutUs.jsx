@@ -56,7 +56,7 @@ const AboutUs = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
+          <h2 className="text-4xl text-green-400 font-bold mb-6">Who We Are</h2>
           <p className="text-lg mb-4 text-justify">
             We're a young and ambitious team passionate about building thoughtful
             technology that empowers individuals and communities. Our foundation is
@@ -107,7 +107,7 @@ const AboutUs = () => {
         viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
-        <h2 className="text-3xl font-bold text-center mb-14">What Makes Us Different</h2>
+        <h2 className="text-4xl font-bold text-center text-green-400 mb-14 ">What Makes Us Different</h2>
         <div className="grid md:grid-cols-3 gap-10 text-center max-w-6xl mx-auto">
           {[
             {
@@ -170,7 +170,7 @@ const AboutUs = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-xl mx-auto backdrop-blur-sm bg-white/10 p-10 rounded-2xl shadow-md">
-          <h2 className="text-3xl font-bold mb-4">Join Us on This Journey</h2>
+          <h2 className="text-3xl font-bold mb-4 text-green-400 ">Join Us on This Journey</h2>
           <p className="mb-6 text-lg">
             We’re just getting started — and we’re looking for curious minds to build
             with us.

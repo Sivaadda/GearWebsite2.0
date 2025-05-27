@@ -79,7 +79,7 @@ const Product = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 py-8"
       >
-        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-4xl font-bold text-center text-green-400  mb-12">
           Our Products
         </h2>
         <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-24">
@@ -115,7 +115,7 @@ const Product = () => {
         className="text-green-100 py-16 px-6"
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-green">
+          <h2 className="text-3xl font-bold text-center mb-4 ">
             Interested in Using Our Product?
           </h2>
           <p className="text-center text-md mb-8 text-gray-400">

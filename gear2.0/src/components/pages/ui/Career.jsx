@@ -137,7 +137,7 @@ const fadeUp = {
 
       {/* Why Us */}
      <section className="py-8 px-6 max-w-6xl mx-auto text-center">
-  <h2 className="text-3xl font-bold mb-12">Why Work With Us?</h2>
+  <h2 className="text-3xl font-bold mb-12 text-green-400 ">Why Work With Us?</h2>
 
   <motion.div
     className="grid md:grid-cols-3 gap-8 text-left"

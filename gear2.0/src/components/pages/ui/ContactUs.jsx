@@ -266,7 +266,7 @@ export default function ContactUs() {
         viewport={{ once: false }}
         className="text-center py-12"
       >
-        <h3 className="text-lg font-semibold text-green-200">Follow us</h3>
+        <h3 className="text-lg font-semibold">Follow us</h3>
         <div className="flex justify-center gap-6 mt-4 animate-pulse">
           {[
             { href: "https://facebook.com", icon: "facebook.svg" },
