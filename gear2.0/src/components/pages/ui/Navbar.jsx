@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolling ? "shadow-md bg-[#0F0F0F]/95 backdrop-blur border-b-4 border-green-600" : "bg-transparent"
+        scrolling || menuOpen ? "shadow-md bg-[#0F0F0F]/95 backdrop-blur border-b-4 border-green-600" : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
