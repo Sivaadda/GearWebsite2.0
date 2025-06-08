@@ -42,6 +42,28 @@ const productsList = [
       name: 'AI-PR',
       info: 'An intelligent AI that seamlessly curates, schedules, and posts images on social media, optimizing engagement with automation and precision.',
     },
+
+  //   {
+  //   id: 7,
+  //   image: '/images/ai-solutions.jpg',
+  //   video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //   name: 'AI Solutions & Automation',
+  //   info: 'From NLP to predictive analytics, we build intelligent systems to automate tasks, analyze data, and optimize your business processes.',
+  // },
+  // {
+  //   id: 8,
+  //   image: '/images/robotics-consulting.jpg',
+  //   video: 'https://www.youtube.com/embed/7rmdsc8b6vc',
+  //   name: 'Robotics Integration & Consulting',
+  //   info: 'We prototype and deploy smart robots—combining AI, computer vision, and automation—for logistics, manufacturing, and service sectors.',
+  // },
+  // {
+  //   id: 9,
+  //   image: '/images/it-consulting.jpg',
+  //   video: 'https://www.youtube.com/embed/3qLDeB2xPoE',
+  //   name: 'IT & Digital Transformation',
+  //   info: 'Custom software, AI-first infrastructure, and strategic consulting to future-proof your digital operations and scale intelligently.',
+  // },
   ];
 
   export default productsList;

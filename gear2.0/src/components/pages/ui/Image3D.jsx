@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section className=" min-h-screen flex items-center justify-center text-white overflow-hidden">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-80 z-0"

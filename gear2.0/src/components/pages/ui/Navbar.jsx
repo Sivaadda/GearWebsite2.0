@@ -71,21 +71,6 @@ const Navbar = () => {
             
           ))}
         </ul>
-{/* 
-<div className="ml-4">
-  <label className="inline-flex items-center cursor-pointer">
-    <input
-      type="checkbox"
-      className="sr-only peer"
-      checked={darkMode}
-      onChange={() => setDarkMode(!darkMode)}
-    />
-    <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500 dark:peer-focus:ring-green-400 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600 relative" />
-    <span className="ml-2 text-white text-sm">
-      {darkMode ? "🌙" : "☀️"}
-    </span>
-  </label>
-</div> */}
 
 
         {/* Mobile Menu Toggle */}

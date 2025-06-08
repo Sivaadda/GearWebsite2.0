@@ -30,18 +30,15 @@ const scaleIn = {
 };
 
 const AboutUs = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   return (
     <div className="bg-black text-green-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/aboutus.png"
         headlines={[
-          "Get to Know Our Journey",
-          "Driven by Purpose, Built on Values",
+          "Innovation drives us",
           "We Grow Together",
+          "Think. Create. Evolve"
         ]}
         subtext="We’re a team of passionate individuals committed to building meaningful solutions and lasting relationships."
       />

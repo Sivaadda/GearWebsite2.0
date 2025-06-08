@@ -104,18 +104,18 @@ const testimonials = [
 ];
 
 const Service = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
 
   return (
     <div className="bg-black text-green-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/service.png"
         headlines={[
-          "AI & Robotics Solutions That Transform Your Business",
-          "Smarter Automation, Real Results",
-          "Powering the Future with Intelligent Systems",
+          "Quality meets consistency.",
+          "Powering future technology.",
+          "Innovate with intelligence."
+
+
         ]}
         subtext="We specialize in cutting-edge AI and robotics services to enhance operational efficiency, precision, and scalability for modern businesses."
       />

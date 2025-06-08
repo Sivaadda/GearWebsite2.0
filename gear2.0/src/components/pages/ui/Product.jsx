@@ -15,9 +15,6 @@ const Product = () => {
     description: "",
   });
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,9 +61,9 @@ const Product = () => {
       <HeroSection
         backgroundImage="/images/products.png"
         headlines={[
-          "Discover Our Best Products",
-          "Innovative Solutions for Your Needs",
-          "Quality and Performance Guaranteed",
+          "Built for performance",
+          "Engineered with precision",
+          "Innovation you trust",
         ]}
         subtext="Explore our range of cutting-edge products designed to simplify your life and boost productivity."
       />

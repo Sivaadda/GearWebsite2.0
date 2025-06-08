@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
 
 export default function ContactUs() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -63,7 +61,7 @@ export default function ContactUs() {
     <div className="bg-black text-green-100 font-sans">
       <HeroSection
         backgroundImage="/images/contact.png"
-        headlines={["Contact Us", "Get in Touch", "We’re Here to Help!"]}
+        headlines={["Let’s connect now", "Here to help", "Answers start here"]}
         subtext="Have any questions or inquiries? Reach out to us for more information about our services and offerings."
       />
 
@@ -272,10 +270,25 @@ export default function ContactUs() {
             { href: "https://facebook.com", icon: "facebook.svg" },
             { href: "https://twitter.com", icon: "twitter.svg" },
             { href: "https://linkedin.com", icon: "youtube.svg" },
-            { href: "https://www.instagram.com/gear_services/#", icon: "instagram.svg" },
+            {
+              href: "https://www.instagram.com/gear_services/#",
+              icon: "instagram.svg",
+            },
+            {
+              href: "https://www.linkedin.com/company/servicesingear",
+              icon: "linkdin.png",
+            },
           ].map((social, i) => (
-            <a key={i} href={social.href} className="text-green-300 hover:text-white">
-              <img src={`/images/${social.icon}`} alt="icon" className="w-6 h-6" />
+            <a
+              key={i}
+              href={social.href}
+              className="text-green-300 hover:text-white"
+            >
+              <img
+                src={`/images/${social.icon}`}
+                alt="icon"
+                className="w-6 h-6"
+              />
             </a>
           ))}
         </div>

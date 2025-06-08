@@ -8,15 +8,23 @@ import Career from './components/pages/ui/Career';
 import Navbar from './components/pages/ui/Navbar';
 import Footer from './components/pages/ui/Footer';
 import JobApply from './components/pages/ui/JobApply';
+import ScrollToTop from './components/pages/ui/SrollToTop';
 
 
 
 function App() {
+const redirect = sessionStorage.redirect;
+if (redirect) {
+  sessionStorage.removeItem('redirect');
+  window.history.replaceState(null, '', redirect);
+}
+
   return (
     <div>
      
     <Router>
       <Navbar/>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<AboutUs/>} />

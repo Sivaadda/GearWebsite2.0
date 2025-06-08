@@ -70,14 +70,6 @@ const fadeUpStagger = {
 const Home = () => {
   // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    // Simulate loading time
-    // const timer = setTimeout(() => {
-    //   setLoading(false);
-    //   window.scrollTo({ top: 0, behavior: "smooth" });
-    }, ); // simulate 2 seconds of loading
-
 
 
   const services = [
@@ -108,56 +100,11 @@ const Home = () => {
   return (
     <div className="bg-black text-green-400 min-h-screen font-sans overflow-x-hidden">
       <Image3D />
-      {/* Hero Section */}
-      {/* <section className="relative py-24 px-6 bg-gradient-to-r from-green-950 via-black to-gray-900 text-white text-center overflow-hidden">
-  <div className="absolute inset-0 bg-[url('/images/bg-pattern.svg')] opacity-5 bg-cover bg-center pointer-events-none" />
+   
 
-  <motion.h2
-    className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-green-400"
-    initial="hidden"
-    animate="visible"
-    viewport={{ once: false, amount: 0.3 }}
-    variants={fadeIn}
-  >
-    Empower Your Vision with Next-Gen Technology
-  </motion.h2>
-
-  <motion.p
-    className="text-base md:text-lg text-green-100 max-w-2xl mx-auto mb-10"
-    custom={1}
-    initial="hidden"
-    animate="visible"
-    viewport={{ once: false, amount: 0.3 }}
-    variants={fadeIn}
-  >
-    Whether you're building sustainable energy solutions, intelligent automation, or digital platforms — we partner with you to bring bold ideas to life through AI, robotics, and IT.
-  </motion.p>
-
-  <motion.div
-    className="flex justify-center gap-4 flex-wrap"
-    custom={2}
-    initial="hidden"
-    animate="visible"
-    viewport={{ once: false, amount: 0.3 }}
-    variants={fadeIn}
-  >
-    <a
-      href="/contact"
-      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold transition shadow-lg"
-    >
-      Let’s Talk
-    </a>
-    <a
-      href="/services"
-      className="border border-green-500 text-green-300 hover:bg-green-600 hover:text-white px-6 py-3 rounded-full font-semibold transition shadow-lg"
-    >
-      See What We Do
-    </a>
-  </motion.div>
-</section> */}
 
       {/* Why Us */}
-      <section className="py-20 px-6 text-center bg-black">
+      <section className="relative z-10 py-32 px-6 text-center bg-black">
         <h2 className="text-3xl font-bold mb-8">Why Choose Us?</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
           {[
