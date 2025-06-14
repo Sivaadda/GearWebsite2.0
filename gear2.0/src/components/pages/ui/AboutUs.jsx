@@ -1,6 +1,6 @@
 import HeroSection from "./HeroSection";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -172,12 +172,12 @@ const AboutUs = () => {
             We’re just getting started — and we’re looking for curious minds to build
             with us.
           </p>
-          <a
-            href="/career"
+          <Link
+            to="/career"
             className="inline-block bg-black px-6 py-3 rounded-full text-green-200 hover:bg-green-100 hover:text-black transition"
           >
             Explore Careers
-          </a>
+          </Link>
         </div>
       </motion.section>
     </div>

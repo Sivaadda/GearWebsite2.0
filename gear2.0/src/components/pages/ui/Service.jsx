@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -272,12 +273,12 @@ const Service = () => {
               Discover how our AI and robotics solutions can streamline your operations,
               reduce costs, and drive innovation in your organization.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-3 rounded-xl transition duration-300"
             >
               Get in Touch
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div variants={slideInRight} className="flex justify-center md:justify-end">

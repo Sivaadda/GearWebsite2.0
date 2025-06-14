@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import productsList from "./ProductsList";
+import { Link } from "react-router-dom";
 import FAQ from "./FAQ";
 import StatsCounter from "./StatsCounter";
 import ServicesScroll from "./ServicesScroll";
@@ -98,10 +99,9 @@ const Home = () => {
   // if (loading) return <LoadingScreen />;
 
   return (
-    <div className="bg-black text-green-400 min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-black text-green-400 min-h-screen font-sans">
       <Image3D />
    
-
 
       {/* Why Us */}
       <section className="relative z-10 py-32 px-6 text-center bg-black">
@@ -187,6 +187,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
      
       {/* 
@@ -280,18 +281,18 @@ const Home = () => {
             intelligent solutions.
           </p>
           <div className="flex justify-center gap-4">
-            <a
-              href="/products"
+            <Link
+              to="/products"
               className="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
             >
               View Products
-            </a>
-            <a
-              href="/career"
+            </Link>
+            <Link
+              to="/career"
               className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-700 transition"
             >
               Join Us
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>

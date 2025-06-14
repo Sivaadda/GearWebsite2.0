@@ -269,14 +269,14 @@ export default function ContactUs() {
           {[
             { href: "https://facebook.com", icon: "facebook.svg" },
             { href: "https://twitter.com", icon: "twitter.svg" },
-            { href: "https://linkedin.com", icon: "youtube.svg" },
+            // { href: "https://linkedin.com", icon: "youtube.svg" },
             {
               href: "https://www.instagram.com/gear_services/#",
               icon: "instagram.svg",
             },
             {
               href: "https://www.linkedin.com/company/servicesingear",
-              icon: "linkdin.png",
+              icon: "linkedin.png",
             },
           ].map((social, i) => (
             <a

@@ -45,25 +45,31 @@ function Footer() {
         </motion.div>
 
         {/* Navigation Links */}
-        <motion.div variants={itemVariants}>
-          <h3 className="font-semibold text-green-400 mb-3">Navigation</h3>
-          <ul className="space-y-2">
-            {["Home", "About Us", "Services", "Products"].map((text, i) => (
-              <motion.li
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={`/${text.toLowerCase().replace(" ", "")}`}
-                  className="hover:text-green-500 transition"
-                >
-                  {text}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
+       <motion.div variants={itemVariants}>
+  <h3 className="font-semibold text-green-400 mb-3">Navigation</h3>
+  <ul className="space-y-2">
+    {[
+      { label: "Home", to: "/" },
+      { label: "About Us", to: "/about" },
+      { label: "Services", to: "/services" },
+      { label: "Products", to: "/products" },
+    ].map(({ label, to }, i) => (
+      <motion.li
+        key={i}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <Link to={to} onClick={() => {
+    if (window.location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }}className="hover:text-green-500 transition">
+          {label}
+        </Link>
+      </motion.li>
+    ))}
+  </ul>
+</motion.div>
 
         {/* Quick Links */}
         <motion.div variants={itemVariants}>
@@ -80,7 +86,11 @@ function Footer() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link to={to} className="hover:text-green-500 transition">
+                <Link to={to} onClick={() => {
+    if (window.location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }}className="hover:text-green-500 transition">
                   {label}
                 </Link>
               </motion.li>
