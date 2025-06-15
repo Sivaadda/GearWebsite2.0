@@ -99,7 +99,7 @@ const Home = () => {
   // if (loading) return <LoadingScreen />;
 
   return (
-    <div className="bg-black text-green-400 min-h-screen font-sans">
+    <div className="bg-black text-green-400 min-h-screen font-sans overflow-hidden">
       <Image3D />
    
 
